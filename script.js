@@ -15,6 +15,7 @@ const noResults = document.getElementById("noResults"); // A message shown when 
 
 // Setting up user interactions: These make the page respond when users do stuff
 searchBtn.addEventListener("click", searchMovies); // When someone clicks the search button, run searchMovies
+
 movieNameInput.addEventListener("keypress", (e) => {
   // When someone types in the movie name box
   if (e.key === "Enter") searchMovies(); // If they hit Enter, run searchMovies
@@ -70,8 +71,12 @@ async function searchByName(query, year, genre) {
     url += `&year=${year}`; // Add the year to the search URL
   }
 
+  console.log("search movie url", url);
+
   const response = await fetch(url); // Send the request to the API and wait for a reply
   const data = await response.json(); // Turn the API’s response into usable data
+
+  console.log("initial movies recieved => ", data.results);
 
   let movies = data.results || []; // Grab the list of movies, or an empty list if none found
 
@@ -82,6 +87,8 @@ async function searchByName(query, year, genre) {
       (movie) => movie.genre_ids && movie.genre_ids.includes(parseInt(genre)) // Only keep movies matching the genre
     ); // parseInt turns the genre ID into a number
   }
+
+  console.log("filtered movies as per genre", movies);
 
   return movies; // Send back the filtered movie list
 }
@@ -109,6 +116,7 @@ async function discoverMovies(genre, year) {
 
 // Get popular movies: Grabs a list of trending movies
 async function getPopularMovies() {
+  console.log("Popular movies search");
   // No inputs needed
   const url = `${baseUrl}/movie/popular?api_key=${apiKey}&language=en-US&page=1`; // URL for popular movies
   const response = await fetch(url); // Send the request and wait
@@ -124,12 +132,12 @@ function displayMovies(movies) {
 
   if (!movies || movies.length === 0) {
     // If there are no movies
-    showNoResults(); // Show a "no results" message
+    showNoResults(); // Show a "no results" section
     return; // Stop here
   }
 
-  resultsSection.style.display = "block"; // Show the results area
-  noResults.style.display = "none"; // Hide the "no results" message
+  resultsSection.style.display = "block"; // Show the results section (by default hidden)
+  noResults.style.display = "none"; // Hide the "no results" section
 
   moviesGrid.innerHTML = ""; // Clear out any old movie cards
 
