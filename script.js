@@ -164,15 +164,15 @@ function createMovieCard(movie) {
     ? movie.overview // Use the description
     : "No description available."; // Use a default message if none
 
-  card.innerHTML = ` // Set the card’s HTML content
-        <img src="${posterUrl}" alt="${movie.title}" class="movie-poster" loading="lazy"> // Show the poster image
-        <div class="movie-info"> // A container for movie details
-            <h3 class="movie-title">${movie.title}</h3> // Show the movie title
-            <div class="movie-year">${releaseYear}</div> // Show the release year
-            <p class="movie-overview">${overview}</p> // Show the description
-            <div class="movie-rating"> // A container for the rating
-                <span class="rating-star">⭐</span> // Add a star icon
-                <span class="rating-score">${rating}</span> // Show the rating
+  card.innerHTML = ` 
+        <img src="${posterUrl}" alt="${movie.title}" class="movie-poster" loading="lazy"> 
+        <div class="movie-info">
+            <h3 class="movie-title">${movie.title}</h3> 
+            <div class="movie-year">${releaseYear}</div> 
+            <p class="movie-overview">${overview}</p> 
+            <div class="movie-rating"> 
+                <span class="rating-star">⭐</span> 
+                <span class="rating-score">${rating}</span> 
             </div>
         </div>
     `;
@@ -188,7 +188,7 @@ function createMovieCard(movie) {
 // Show movie details: Pops up an alert with more info
 function showMovieDetails(movie) {
   // Takes a movie object
-  const details = ` // Build a string with movie info
+  const details = ` 
 Title: ${movie.title}
 Release Date: ${movie.release_date || "N/A"}
 Rating: ${movie.vote_average ? movie.vote_average.toFixed(1) : "N/A"}/10
