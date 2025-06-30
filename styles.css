@@ -1,277 +1,466 @@
+/* Targets every single element on the page, like a blanket rule for everything */
 * {
+  /* Removes default margins (outer space) that browsers add to elements */
   margin: 0;
+  /* Removes default padding (inner space) that browsers might apply */
   padding: 0;
+  /* Makes sure element width/height includes padding and borders, not just content */
   box-sizing: border-box;
 }
 
+/* Styles the body element, which is the main container for the page’s content */
 body {
+  /* Sets a stack of fonts: 'Inter' first, then fallbacks for systems like Apple, Windows, etc. */
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* Creates a gradient background from a light purple (#667eea) to a darker purple (#764ba2) at a 135-degree angle */
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  /* Ensures the body takes up at least the full height of the viewport */
   min-height: 100vh;
+  /* Sets the default text color to a dark gray */
   color: #333;
+  /* Sets line spacing to 1.6x the font size for better readability */
   line-height: 1.6;
 }
 
+/* Styles a container class to hold the main content and keep it centered */
 .container {
+  /* Limits the maximum width to 1200px so content doesn’t stretch too wide on big screens */
   max-width: 1200px;
+  /* Centers the container horizontally by setting equal margins on left and right */
   margin: 0 auto;
+  /* Adds 20px of padding inside the container for some breathing room */
   padding: 20px;
 }
 
+/* Styles the header section, typically at the top of the page */
 .header {
+  /* Centers all text inside the header */
   text-align: center;
+  /* Adds 40px of space below the header to separate it from content below */
   margin-bottom: 40px;
+  /* Sets the text color to white for contrast against the gradient background */
   color: white;
 }
 
+/* Styles the logo, likely a title or brand name */
 .logo {
+  /* Sets a large font size (3rem, about 48px) for prominence */
   font-size: 3rem;
+  /* Makes the text bold for emphasis */
   font-weight: 700;
+  /* Adds 10px of space below the logo */
   margin-bottom: 10px;
+  /* Adds a subtle shadow behind the text for a 3D effect */
   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
+/* Styles a tagline, usually a smaller subtitle under the logo */
 .tagline {
+  /* Sets a smaller font size (1.2rem, about 19.2px) for the tagline */
   font-size: 1.2rem;
+  /* Uses a lighter font weight to make it less prominent than the logo */
   font-weight: 300;
+  /* Makes the tagline slightly transparent for a subtle look */
   opacity: 0.9;
 }
 
+/* Styles a section for the search form */
 .search-section {
+  /* Sets a semi-transparent white background for a frosted glass effect */
   background: rgba(255, 255, 255, 0.95);
+  /* Adds a blur effect behind the section for a modern, glassy look */
   backdrop-filter: blur(10px);
+  /* Rounds the corners of the section with a 20px radius */
   border-radius: 20px;
+  /* Adds 40px of padding inside the section for spacing */
   padding: 40px;
+  /* Adds 40px of space below the section */
   margin-bottom: 40px;
+  /* Adds a soft shadow for depth */
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
+/* Styles the search form itself */
 .search-form {
+  /* Uses CSS Grid to arrange form elements */
   display: grid;
+  /* Creates a responsive grid with columns that are at least 280px wide but can grow */
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  /* Adds 25px of space between grid items */
   gap: 25px;
+  /* Aligns items at the bottom of each grid cell for consistency */
   align-items: end;
 }
 
+/* Styles a group of form elements (like a label and input together) */
 .form-group {
+  /* Uses flexbox to stack elements vertically */
   display: flex;
+  /* Arranges items in a column (label above input) */
   flex-direction: column;
 }
 
+/* Styles labels within form groups */
 .form-group label {
+  /* Makes the label text bold for emphasis */
   font-weight: 600;
+  /* Adds 8px of space below the label */
   margin-bottom: 8px;
+  /* Sets a medium gray color for the label text */
   color: #555;
+  /* Sets a slightly smaller font size (0.95rem, about 15.2px) */
   font-size: 0.95rem;
 }
 
+/* Styles input fields for search */
 .search-input {
+  /* Adds padding inside the input for comfortable typing */
   padding: 15px 20px;
+  /* Adds a light gray border around the input */
   border: 2px solid #e1e5e9;
+  /* Rounds the corners of the input field */
   border-radius: 12px;
+  /* Sets the font size to 1rem (about 16px) */
   font-size: 1rem;
+  /* Smoothly transitions changes (like border color) over 0.3 seconds */
   transition: all 0.3s ease;
+  /* Sets a white background for the input */
   background: white;
 }
 
+/* Styles the input field when it’s focused (clicked or selected) */
 .search-input:focus {
+  /* Removes the default browser outline */
   outline: none;
+  /* Changes the border color to match the gradient’s start color */
   border-color: #667eea;
+  /* Adds a subtle glow around the input when focused */
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  /* Slightly lifts the input upward for a nice effect */
   transform: translateY(-2px);
 }
 
+/* Styles the search button */
 .search-btn {
+  /* Uses the same gradient as the body background for consistency */
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  /* Sets the button text color to white */
   color: white;
+  /* Removes the default border */
   border: none;
+  /* Adds padding for a spacious button */
   padding: 15px 30px;
+  /* Rounds the button’s corners */
   border-radius: 12px;
+  /* Sets a slightly larger font size for the button text */
   font-size: 1.1rem;
+  /* Makes the button text bold */
   font-weight: 600;
+  /* Changes the cursor to a pointer to indicate it’s clickable */
   cursor: pointer;
+  /* Smoothly transitions changes (like transform) over 0.3 seconds */
   transition: all 0.3s ease;
+  /* Uses flexbox to align content inside the button */
   display: flex;
+  /* Centers content vertically */
   align-items: center;
+  /* Centers content horizontally */
   justify-content: center;
+  /* Adds 10px of space between elements inside the button (like an icon and text) */
   gap: 10px;
+  /* Ensures the button is at least 54px tall for consistency */
   min-height: 54px;
 }
 
+/* Styles the search button when hovered over */
 .search-btn:hover {
+  /* Lifts the button slightly upward for a hover effect */
   transform: translateY(-3px);
+  /* Adds a shadow for depth when hovered */
   box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
 }
 
+/* Styles the search button when clicked (active state) */
 .search-btn:active {
+  /* Reduces the upward lift slightly when the button is clicked */
   transform: translateY(-1px);
 }
 
+/* Styles a loading state, likely shown while search results are fetching */
 .loading {
+  /* Centers text in the loading section */
   text-align: center;
+  /* Adds padding for spacing */
   padding: 60px 20px;
+  /* Sets text color to white for visibility on the gradient background */
   color: white;
 }
 
+/* Styles a loading spinner animation */
 .spinner {
+  /* Sets the spinner’s size to 50x50 pixels */
   width: 50px;
   height: 50px;
+  /* Creates a circular border with a semi-transparent bottom */
   border: 4px solid rgba(255,255,255,0.3);
+  /* Makes the top border solid white for the spinning effect */
   border-top: 4px solid white;
+  /* Makes the spinner a perfect circle */
   border-radius: 50%;
+  /* Applies a spinning animation that rotates it continuously */
   animation: spin 1s linear infinite;
+  /* Centers the spinner horizontally and adds 20px of space below */
   margin: 0 auto 20px;
 }
 
+/* Defines the spinning animation for the spinner */
 @keyframes spin {
+  /* Starts the animation with no rotation */
   0% { transform: rotate(0deg); }
+  /* Ends the animation with a full 360-degree rotation */
   100% { transform: rotate(360deg); }
 }
 
+/* Styles a section for displaying search results */
 .results-section {
+  /* Uses a semi-transparent white background, like the search section */
   background: rgba(255, 255, 255, 0.95);
+  /* Adds a blur effect for a frosted glass look */
   backdrop-filter: blur(10px);
+  /* Rounds the corners of the section */
   border-radius: 20px;
+  /* Adds padding inside the section */
   padding: 40px;
+  /* Adds a soft shadow for depth */
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
+/* Styles the title for the results section */
 .results-title {
+  /* Sets a larger font size (2rem, about 32px) for the title */
   font-size: 2rem;
+  /* Makes the title bold */
   font-weight: 700;
+  /* Adds 30px of space below the title */
   margin-bottom: 30px;
+  /* Sets the text color to dark gray */
   color: #333;
+  /* Centers the title text */
   text-align: center;
 }
 
+/* Styles a grid for displaying movie cards */
 .movies-grid {
+  /* Uses CSS Grid for a responsive layout */
   display: grid;
+  /* Creates columns that are at least 280px wide but can grow */
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  /* Adds 30px of space between grid items */
   gap: 30px;
 }
 
+/* Styles individual movie cards */
 .movie-card {
+  /* Sets a white background for the card */
   background: white;
+  /* Rounds the card’s corners */
   border-radius: 16px;
+  /* Hides any content that overflows the card’s boundaries */
   overflow: hidden;
+  /* Adds a shadow for depth */
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  /* Smoothly transitions changes (like transform) over 0.3 seconds */
   transition: all 0.3s ease;
+  /* Changes the cursor to a pointer to indicate it’s clickable */
   cursor: pointer;
 }
 
+/* Styles the movie card when hovered over */
 .movie-card:hover {
+  /* Lifts the card upward for a hover effect */
   transform: translateY(-8px);
+  /* Increases the shadow for more depth on hover */
   box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
+/* Styles the movie poster image */
 .movie-poster {
+  /* Makes the image take up the full width of the card */
   width: 100%;
+  /* Sets a fixed height for consistency */
   height: 400px;
+  /* Ensures the image covers the area without stretching */
   object-fit: cover;
+  /* Adds a subtle gradient background as a fallback if the image doesn’t load */
   background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
 }
 
+/* Styles the section containing movie details */
 .movie-info {
+  /* Adds padding inside the info section */
   padding: 20px;
 }
 
+/* Styles the movie title */
 .movie-title {
+  /* Sets a moderately large font size (1.3rem, about 20.8px) */
   font-size: 1.3rem;
+  /* Makes the title bold */
   font-weight: 600;
+  /* Adds 8px of space below the title */
   margin-bottom: 8px;
+  /* Sets the text color to dark gray */
   color: #333;
+  /* Sets line spacing to 1.3x for readability */
   line-height: 1.3;
 }
 
+/* Styles the movie release year */
 .movie-year {
+  /* Sets the text color to match the gradient’s start color */
   color: #667eea;
+  /* Makes the year slightly bold */
   font-weight: 500;
+  /* Adds 10px of space below the year */
   margin-bottom: 10px;
 }
 
+/* Styles the movie description/overview */
 .movie-overview {
+  /* Sets a medium gray color for the text */
   color: #666;
+  /* Sets a slightly smaller font size (0.95rem, about 15.2px) */
   font-size: 0.95rem;
+  /* Sets line spacing for readability */
   line-height: 1.5;
+  /* Uses WebKit to limit the text to 3 lines */
   display: -webkit-box;
+  /* Clamps the text to 3 lines */
   -webkit-line-clamp: 3;
+  /* Sets the orientation for line clamping */
   -webkit-box-orient: vertical;
+  /* Hides any text that overflows the 3-line limit */
   overflow: hidden;
 }
 
+/* Styles the movie rating section */
 .movie-rating {
+  /* Uses flexbox to align rating elements horizontally */
   display: flex;
+  /* Centers items vertically */
   align-items: center;
+  /* Adds 5px of space between rating elements */
   gap: 5px;
+  /* Adds 15px of space above the rating */
   margin-top: 15px;
+  /* Adds 15px of space above and a light gray border */
   padding-top: 15px;
+  /* Adds a faint border above the rating section */
   border-top: 1px solid #eee;
 }
 
+/* Styles the star icon for ratings */
 .rating-star {
+  /* Sets the star color to a golden yellow */
   color: #ffc107;
 }
 
+/* Styles the rating score (e.g., 8.5/10) */
 .rating-score {
+  /* Makes the score bold */
   font-weight: 600;
+  /* Sets the text color to dark gray */
   color: #333;
 }
 
+/* Styles a message shown when no search results are found */
 .no-results {
+  /* Centers the text */
   text-align: center;
+  /* Adds padding for spacing */
   padding: 80px 20px;
+  /* Sets text color to white for visibility */
   color: white;
 }
 
+/* Styles an icon for the no-results message */
 .no-results-icon {
+  /* Sets a large font size (4rem, about 64px) for the icon */
   font-size: 4rem;
+  /* Adds 20px of space below the icon */
   margin-bottom: 20px;
 }
 
+/* Styles the heading for the no-results message */
 .no-results h3 {
+  /* Sets a large font size (1.8rem, about 28.8px) */
   font-size: 1.8rem;
+  /* Adds 10px of space below the heading */
   margin-bottom: 10px;
 }
 
+/* Styles the paragraph for the no-results message */
 .no-results p {
+  /* Sets a moderate font size (1.1rem, about 17.6px) */
   font-size: 1.1rem;
+  /* Makes the text slightly transparent */
   opacity: 0.8;
 }
 
+/* Media query for screens smaller than 768px (tablets and below) */
 @media (max-width: 768px) {
+  /* Styles the container for smaller screens */
   .container {
+    /* Reduces padding to 15px for tighter spacing */
     padding: 15px;
   }
   
+  /* Styles the logo for smaller screens */
   .logo {
+    /* Reduces font size to 2.5rem (about 40px) */
     font-size: 2.5rem;
   }
   
+  /* Styles the search section for smaller screens */
   .search-section {
+    /* Reduces padding for less space */
     padding: 30px 20px;
   }
   
+  /* Styles the search form for smaller screens */
   .search-form {
+    /* Switches to a single-column layout */
     grid-template-columns: 1fr;
+    /* Reduces gap between form elements */
     gap: 20px;
   }
   
+  /* Styles the movies grid for smaller screens */
   .movies-grid {
+    /* Adjusts columns to be at least 250px wide */
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    /* Reduces gap between grid items */
     gap: 20px;
   }
   
+  /* Styles the results section for smaller screens */
   .results-section {
+    /* Reduces padding for less space */
     padding: 30px 20px;
   }
 }
 
+/* Media query for screens smaller than 480px (small phones) */
 @media (max-width: 480px) {
+  /* Styles the movies grid for very small screens */
   .movies-grid {
+    /* Forces a single-column layout */
     grid-template-columns: 1fr;
   }
   
+  /* Styles the movie poster for very small screens */
   .movie-poster {
+    /* Reduces the poster height to 350px */
     height: 350px;
   }
 }
